@@ -464,7 +464,7 @@
 
 										<!-- Answer -->
 										<p class="p-lg">If you can’t find the support you’re looking for, ActX has got you covered. 
-											Use the Add Tags feature to add a behavior and create new rooms and trackers. This allows you to find or create a space that fits your specific needs. 
+											Use the <span class="txt-700">Add Tags</span> feature to add a behavior and create new rooms and trackers. This allows you to find or create a space that fits your specific needs. 
 
 										</p>
 
@@ -817,6 +817,13 @@
 				
 		<!-- Custom Script -->		
 		<script src="js/custom.js"></script>
+
+		<script>
+			// JavaScript to redirect from /home to /
+			if (window.location.pathname === '/home') {
+				window.location.replace('/');
+			}
+		</script>
 
 		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->															
 		<!--
