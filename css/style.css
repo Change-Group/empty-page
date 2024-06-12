@@ -789,6 +789,12 @@ ol.digit-list p {
   padding: 15px 44px;
 }
 
+.btn.btn-sm {
+  font-size: 1.0rem;
+  padding: 15px 44px;
+  margin-top: 10px;
+}
+
 /*------------------------------------------*/
 /*  Button Color
 /*------------------------------------------*/
@@ -5260,6 +5266,7 @@ h5.posts-category {
 .footer {
   padding-top: 80px;
   padding-bottom: 30px;
+  background-color: #222222;
 }
 
 #footer-1 .footer-links,
@@ -5293,8 +5300,9 @@ img.footer-logo {
 }
 
 .footer p,
-.footer a {
-  color: #998da0;
+.footer a,
+.footer h6 {
+  color: whitesmoke;
   transition: all 0.2s ease-in-out;
 }
 
@@ -5307,7 +5315,7 @@ img.footer-logo {
 }
 
 .footer .footer-links a:hover {
-  color: #151515;
+  color: whitesmoke;
   padding-left: 5px;
 }
 
