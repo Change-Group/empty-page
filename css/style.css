@@ -791,7 +791,7 @@ ol.digit-list p {
 
 .btn.btn-sm {
   font-size: 1.0rem;
-  padding: 15px 44px;
+  padding: 15px 15px;
   margin-top: 10px;
 }
 
@@ -855,6 +855,17 @@ ol.digit-list p {
   color: #333!important;
   background-color: #f1ff51;
   border-color: #f1ff51!important;
+}
+
+.btn-greendark, 
+.scroll .btn-greendark, 
+.white-color .btn-greendark,
+.greendark-hover:hover, 
+.scroll .greendark-hover:hover, 
+.white-color .greendark-hover:hover {
+  color: black!important;
+  background-color: #24d364;
+  border-color: #24d364!important;
 }
 
 .btn-tra-avocado, 
