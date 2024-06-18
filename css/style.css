@@ -1794,7 +1794,7 @@ h5.sm-title {
 }
 
 .img-block img {
-  max-width: 65%; /* Adjust the size as needed */
+  max-width: 70%; /* Adjust the size as needed */
   height: auto;   /* Maintain aspect ratio */
   display: block; /* Ensures proper alignment within the container */
   margin: 0 auto; /* Center the image within the .img-block */
