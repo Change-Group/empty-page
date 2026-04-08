@@ -14,12 +14,12 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="author" content="DSAThemes"/>	
-		<meta name="description" content="ActX - Landing Page"/>
+		<meta name="description" content="Kuddos - Landing Page"/>
 		<meta name="keywords" content="Find Near Me, Chat, Call, Tracker, Addiction, Mobile, Application, Landing, Product, Mobile App">	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   		<!-- SITE TITLE -->
-		<title>ActX</title>
+		<title>Kuddos</title>
 							
 		<!-- FAVICON AND TOUCH ICONS -->
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -34,6 +34,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -59,6 +60,339 @@
 
 		<!-- RESPONSIVE CSS -->
 		<link href="../css/responsive.css" rel="stylesheet">
+
+		<style>
+			:root {
+				--kudos-dark: #0f1e20;
+				--kudos-green: #4c8861;
+			}
+
+			body {
+				font-family: "Poppins", sans-serif;
+				color: #2e3b3d;
+			}
+
+			h1, h2, h3, h4, h5, h6,
+			.h2-md, .h4-sm, .h5-sm {
+				font-family: "DM Serif Display", serif;
+			}
+
+			p, .p-lg, .p-xl,
+			.simple-list .p-lg {
+				font-family: "Poppins", sans-serif;
+			}
+
+			.terms-title .h2-md {
+				font-size: clamp(42px, 4.6vw, 58px);
+				line-height: 1.02;
+				letter-spacing: -0.3px;
+				color: #102125;
+			}
+
+			.terms-box .h4-sm {
+				font-size: clamp(30px, 3vw, 40px);
+				line-height: 1.05;
+				color: #13272a;
+			}
+
+			.terms-box .h5-sm {
+				font-size: clamp(24px, 2.3vw, 31px);
+				line-height: 1.08;
+				color: #1f3538;
+			}
+
+			.terms-box .p-lg,
+			.terms-box .simple-list .p-lg {
+				font-size: 16px;
+				line-height: 1.7;
+				color: #44585b;
+			}
+
+			.kudos-header {
+				position: sticky;
+				top: 0;
+				z-index: 1200;
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(8px);
+				border-bottom: 1px solid #edf2f2;
+			}
+
+			.kudos-nav {
+				max-width: 1240px;
+				margin: 0 auto;
+				padding: 18px 24px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 18px;
+			}
+
+			.kudos-logo {
+				margin: 0;
+				font-family: "DM Serif Display", serif;
+				font-size: 34px;
+				line-height: 1;
+				color: var(--kudos-dark);
+				font-weight: 400;
+				letter-spacing: 0.2px;
+			}
+
+			.kudos-logo a {
+				color: inherit;
+				text-decoration: none;
+			}
+
+			.kudos-menu {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				gap: 34px;
+				margin: 0;
+				padding: 0;
+			}
+
+			.kudos-menu a {
+				color: var(--kudos-dark);
+				text-decoration: none;
+				font-size: 15px;
+				font-weight: 500;
+			}
+
+			.kudos-menu a:hover {
+				color: var(--kudos-green);
+			}
+
+			.kudos-download-btn {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				border: 0;
+				background: var(--kudos-dark);
+				color: #fff;
+				text-decoration: none;
+				font-size: 15px;
+				font-weight: 600;
+				padding: 11px 24px;
+				border-radius: 999px;
+				transition: transform 0.2s ease, opacity 0.2s ease;
+				white-space: nowrap;
+			}
+
+			.kudos-download-btn:hover {
+				color: #fff;
+				opacity: 0.95;
+				transform: translateY(-1px);
+			}
+
+			.kudos-footer {
+				padding: 56px 24px 26px;
+				background: #231f20;
+			}
+
+			.kudos-footer-wrap {
+				max-width: 1240px;
+				margin: 0 auto;
+			}
+
+			.kudos-footer-main {
+				display: grid;
+				grid-template-columns: 1.1fr 0.9fr 1fr;
+				gap: 28px;
+				padding-bottom: 28px;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+			}
+
+			.kudos-footer-logo {
+				width: 210px;
+				max-width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.kudos-footer-sub {
+				margin: 14px 0 0;
+				max-width: 340px;
+				color: rgba(236, 242, 240, 0.72);
+				font-size: 13px;
+				line-height: 1.5;
+			}
+
+			.kudos-footer-title {
+				margin: 0 0 8px;
+				color: #fff;
+				font-size: 13px;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				font-weight: 600;
+			}
+
+			.kudos-footer-contact a {
+				color: rgba(236, 242, 240, 0.92);
+				text-decoration: none;
+				font-size: 17px;
+				font-weight: 500;
+			}
+
+			.kudos-footer-contact a:hover {
+				color: #fff;
+				text-decoration: underline;
+			}
+
+			.kudos-footer-download .kudos-store-row {
+				margin-top: 10px;
+				gap: 10px;
+			}
+
+			.kudos-footer-download .kudos-store {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 48px;
+				padding: 0 14px;
+				border-radius: 999px;
+				border: 1px solid #000;
+				background: #000;
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+
+			.kudos-footer-download .kudos-store:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 10px 24px rgba(15, 30, 32, 0.11);
+			}
+
+			.kudos-footer-download .kudos-store img {
+				height: 25px;
+				width: auto;
+				display: block;
+			}
+
+			.kudos-footer-bottom {
+				padding-top: 18px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 16px;
+				flex-wrap: wrap;
+			}
+
+			.kudos-footer-legal {
+				display: flex;
+				align-items: center;
+				gap: 14px;
+				color: rgba(236, 242, 240, 0.76);
+				font-size: 13px;
+				flex-wrap: wrap;
+			}
+
+			.kudos-footer-legal a {
+				color: rgba(236, 242, 240, 0.88);
+				text-decoration: none;
+				font-size: 13px;
+			}
+
+			.kudos-footer-legal a:hover {
+				color: #fff;
+				text-decoration: underline;
+			}
+
+			.kudos-footer-social {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+			}
+
+			.kudos-footer-social a {
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				border: 1px solid rgba(255, 255, 255, 0.16);
+				color: rgba(236, 242, 240, 0.9);
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 13px;
+				text-decoration: none;
+				transition: all 0.2s ease;
+			}
+
+			.kudos-footer-social a:hover {
+				color: #fff;
+				border-color: rgba(255, 255, 255, 0.34);
+				transform: translateY(-1px);
+			}
+
+			@media (max-width: 991px) {
+				.kudos-nav {
+					padding: 14px 18px;
+					gap: 12px;
+				}
+
+				.kudos-menu {
+					gap: 18px;
+				}
+
+				.kudos-download-btn {
+					padding: 10px 18px;
+					font-size: 14px;
+				}
+
+				.kudos-footer-main {
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+
+			@media (max-width: 767px) {
+				.kudos-logo {
+					font-size: 30px;
+				}
+
+				.kudos-nav {
+					flex-wrap: wrap;
+				}
+
+				.kudos-menu {
+					width: 100%;
+					justify-content: flex-start;
+					order: 3;
+					margin-top: 4px;
+				}
+
+				.kudos-download-btn {
+					margin-left: auto;
+				}
+
+				.kudos-footer {
+					padding: 42px 16px 22px;
+				}
+
+				.kudos-footer-main {
+					grid-template-columns: 1fr;
+					gap: 18px;
+					padding-bottom: 18px;
+				}
+
+				.kudos-footer-logo {
+					width: 170px;
+				}
+
+				.kudos-footer-contact a {
+					font-size: 15px;
+				}
+
+				.kudos-footer-bottom {
+					padding-top: 14px;
+				}
+
+				.kudos-footer-legal {
+					font-size: 12px;
+					gap: 10px;
+				}
+
+				.kudos-footer-legal a {
+					font-size: 12px;
+				}
+			}
+		</style>
 	
 	</head>
 
@@ -88,71 +422,19 @@
 
 
 
-			<!-- HEADER
-			============================================= -->
-			<header id="header" class="header tra-menu navbar-light">
-				<div class="header-wrapper">
-
-
-					<!-- MOBILE HEADER -->
-				    <div class="wsmobileheader clearfix">	  	
-				    	<span class="smllogo"><a href="/"><img src="../images/ActX_logo+text_without_background.png" alt="mobile-logo"/></a></span>
-				    	<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	
-				 	</div>
-
-
-				 	<!-- NAVIGATION MENU -->
-				  	<div class="wsmainfull menu clearfix">
-	    				<div class="wsmainwp clearfix">
-
-
-	    					<!-- HEADER LOGO -->
-	    					<div class="desktoplogo"><a href="/" class="logo-black"><img src="../images/ActX_logo+text_without_background.png" alt="header-logo"></a></div>
-	    					<div class="desktoplogo"><a href="/" class="logo-white"><img src="../images/ActX_logo+text_without_background.png" alt="header-logo"></a></div>
-
-
-	    					<!-- MAIN MENU -->
-	      					<nav class="wsmenu clearfix">
-	        					<ul class="wsmenu-list nav-skyblue-hover">
-
-
-								   <!-- SIMPLE NAVIGATION LINK -->
-									<li class="nl-simple" aria-haspopup="true"><a href="/">Home</a></li>
-							    	<!-- <li class="nl-simple" aria-haspopup="true"><a href="/about">About</a></li> -->
-									<li class="nl-simple" aria-haspopup="true"><a href="/features">Features</a></li>
-									<!-- DROPDOWN MENU -->
-						          	<!-- <li aria-haspopup="true"><a href="#">Terms & Privacy <span class="wsarrow"></span></a>
-	            						<ul class="sub-menu">
-	            							<li aria-haspopup="true"><a href="/terms">Terms & Conditions</a></li>
-	            							<li aria-haspopup="true"><a href="/privacy">Privacy Policy</a></li>	            					
-						           		</ul>
-								    </li> -->
-									<li class="nl-simple" aria-haspopup="true"><a href="/contacts">Contact Us</a></li>
-
-
-									<a href="/downloads" class="btn btn-sm btn-greendark tra-black-hover mr-2">Download <i class="fas fa-download"></i></a>
-
-
-									<!-- HEADER SOCIAL LINKS 													
-									<li class="nl-simple white-color header-socials ico-20 clearfix" aria-haspopup="true">
-										<span><a href="#" class="ico-facebook"><span class="flaticon-facebook"></span></a></span>
-										<span><a href="#" class="ico-twitter"><span class="flaticon-twitter"></span></a></span>
-										<span><a href="#" class="ico-instagram"><span class="flaticon-instagram"></span></a></span>
-										<span><a href="#" class="ico-dribbble"><span class="flaticon-dribbble"></span></a></span>	
-									</li> -->	
-
-
-
-	        					</ul>
-	        				</nav>	<!-- END MAIN MENU -->
-
-
-	    				</div>
-	    			</div>	<!-- END NAVIGATION MENU -->
-
-
-				</div>     <!-- End header-wrapper -->
-			</header>	<!-- END HEADER -->
+			<header class="kudos-header">
+				<div class="kudos-nav">
+					<h1 class="kudos-logo"><a href="/">Kuddos</a></h1>
+					<nav aria-label="Main navigation">
+						<ul class="kudos-menu">
+							<li><a href="../index.html#missions">Missions</a></li>
+							<li><a href="../index.html#toolkit">Toolkit</a></li>
+							<li><a href="../index.html#community">Community</a></li>
+						</ul>
+					</nav>
+					<a href="#" class="kudos-download-btn">Download Free</a>
+				</div>
+			</header>
 
 
 			
@@ -185,7 +467,7 @@
 
 								<!-- Text -->
 								<p class="p-lg"> 
-								   	Welcome to <span class="txt-700">ActX</span>. We are a dedicated platform for enhancing the mental well-being of its users. 
+								   	Welcome to <span class="txt-700">Kuddos</span>. We are a dedicated platform for enhancing the mental well-being of its users. 
 									Our mission is to support you with personalised mental health guidance, tailored to your individual preferences and behavioural patterns. 
 									As we navigate the complexities of digital privacy, our commitment to safeguarding your personal information remains a top priority. 
 									This Privacy Policy is designed to transparently outline how we collect, use, share, and protect your data.
@@ -705,7 +987,7 @@
 									disagreement. To this effect, they shall consult and negotiate with each other in good faith and, recognizing their mutual interests, 
 									attempt to reach a just and equitable solution satisfactory to both parties. If they do not reach such solution within a period of 60 days, 
 									then, upon notice by either party to the other, all disputes, claims, questions, or disagreements shall be finally settled by arbitration 
-									administered by the Arbitration Association chosen by ActX in accordance with the provisions of its commercial arbitration rules.
+									administered by the Arbitration Association chosen by Kuddos in accordance with the provisions of its commercial arbitration rules.
 
 								</p>
 
@@ -730,7 +1012,7 @@
 
 								</ul>
 
-								<h5 class="h5-sm">ActX-Initiated Termination:</h5>
+								<h5 class="h5-sm">Kuddos-Initiated Termination:</h5>
 
 								<ul class="simple-list">
 									<li class="list-item mt-5">
@@ -740,7 +1022,7 @@
 									</li>
 
 									<li class="list-item">
-										<p class="p-lg"><span class="txt-500">While ActX may terminate</span> access at any time without prior notice, 
+										<p class="p-lg"><span class="txt-500">While Kuddos may terminate</span> access at any time without prior notice,
 											we strive to provide a reasonable explanation post-termination, especially in cases of suspected breach of terms.
 									</li>	
 								</ul>
@@ -771,7 +1053,7 @@
 									</li>
 
 									<li class="list-item mt-5">
-										<p class="p-lg"><span class="txt-500">ActX is not responsible</span> for any harm, whether physical, 
+										<p class="p-lg"><span class="txt-500">Kuddos is not responsible</span> for any harm, whether physical, 
 											emotional, or psychological, that may arise from your use of the app or your interactions with other users.
 										</p>
 									</li>
@@ -817,7 +1099,7 @@
 									<div class="col-md-12">	
 										<div class="more-questions text-center mt-40">
 											<h5 class="h5-sm"><span class="flaticon-check"></span> 
-												If you have any questions about these Privacy Policies, <a href="/contacts" class="skyblue-color">please contact us</a>
+												If you have any questions about these Privacy Policies, <a href="mailto:support@kuddos.me" class="skyblue-color">support@kuddos.me</a>
 											</h5>
 										</div>
 									</div>
@@ -843,97 +1125,50 @@
 
 			<!-- FOOTER-1
 			============================================= -->
-			<footer id="footer-1" class="footer division">
-				<div class="container">
-
-
-					<!-- FOOTER CONTENT -->
-					<div class="row">
-
-
-						<!-- FOOTER INFO -->
-						<div class="col-md-12 col-lg-3">	
-							<div class="footer-info mb-40">
-
-								<!-- Footer Logo -->	
-								<img class="footer-logo" src="../images/ActX_Logo_without_background.png" alt="footer-logo">
-
-							</div>	
+			<footer id="footer-1" class="footer division kudos-footer">
+				<div class="kudos-footer-wrap">
+					<div class="kudos-footer-main">
+						<div>
+							<img class="kudos-footer-logo" src="../images/splash_logo_n.png" alt="Kuddos logo">
+							<p class="kudos-footer-sub">
+								Build healthier habits with missions, quick tools, and a
+								supportive community.
+							</p>
 						</div>
 
-
-					
-						<!-- FOOTER LINKS -->
-						<div class="col-sm-4 col-md-4 col-lg-3 offset-lg-1">
-							
+						<div class="kudos-footer-contact">
+							<p class="kudos-footer-title">Contact ✉️</p>
+							<a href="mailto:support@kuddos.me">support@kuddos.me</a>
 						</div>
 
-
-						<!-- FOOTER SOCIAL LINKS -->
-						<div class="col-sm-2 col-md-2 col-lg-2 offset-lg-1">
-							<div class="footer-store-badges text-right mb-40">
-
-								<!-- AppStore -->
-								<a href="https://apps.apple.com/us/app/actx/id6503298379" class="store">
-									<img class="appstore-original" src="../images/appstore.png" alt="appstore-badge" />
+						<div class="kudos-footer-download">
+							<p class="kudos-footer-title">Download 📲</p>
+							<div class="kudos-store-row">
+								<a href="https://apps.apple.com/us/app/actx/id6503298379" class="kudos-store" aria-label="Download on the App Store">
+									<img src="../images/appstore.png" alt="Download on the App Store">
 								</a>
-												
-								<!-- Google Play -->
-								<a href="#" class="store">
-									<img class="googleplay-original" src="../images/googleplay.png" alt="googleplay-badge" />
-								</a> 
-											
+								<a href="#" class="kudos-store" aria-label="Get it on Google Play">
+									<img src="../images/googleplay.png" alt="Get it on Google Play">
+								</a>
 							</div>
 						</div>
+					</div>
 
-						<!-- FOOTER STORE BADGES -->
-						<div class="col-sm-2 col-md-2">
-							<div class="footer-links text-right">
-
-								<!-- Title -->
-								<h6 class="h6-xs">Product</h6>
-
-								<!-- Footer Links -->
-								<ul class="foo-links clearfix">
-									<li><p class="p-md"><a href="/features">Watch In Action</a></p></li>
-									<li><p class="p-md"><a href="/privacy">Privacy Policy</a></p></li>
-									<li><p class="p-md"><a href="/terms">Terms of Service</a></p></li>
-								</ul>
-
-							</div>	
-						</div>	<!-- END FOOTER STORE BADGES -->
-						
-
-					</div>	 <!-- END FOOTER CONTENT -->
-
-					
-					<!-- BOTTOM FOOTER -->
-					<div class="bottom-footer">
-						<div class="row d-flex justify-content-between align-items-center">
-					
-						<!-- FOOTER COPYRIGHT -->
-						<div class="col-md-6">
-							<div class="footer-copyright">
-								<p>2024 @ ActX Social LLC</p>
-							</div>
+					<div class="kudos-footer-bottom">
+						<div class="kudos-footer-legal">
+							<span>2026 @ Kuddos LLC</span>
+							<a href="../privacy/index.html">Privacy Policy</a>
+							<a href="../terms/index.html">Terms of Service</a>
 						</div>
-					
-						<!-- ADDITIONAL FOOTER CONTENT -->
-						<div class="col-md-6">
-							<div class="footer-additional d-flex justify-content-start justify-content-md-end">
-							<h5 class="h5-xs mr-3"><a href="https://www.facebook.com/profile.php?id=61559539748734" class="foo-facebook"><span class="fab fa-facebook-f"></span></a></h5>
-							<h5 class="h5-xs mr-3"><a href="https://www.tiktok.com/@actx.social" class="foo-dribbble"><span class="fab fa-tiktok"></span></a></h5>
-							<h5 class="h5-xs mr-3"><a href="https://www.instagram.com/actx.social/" class="foo-instagram"><span class="fab fa-instagram"></span></a></h5>
-							<h5 class="h5-xs mr-3"><a href="https://www.youtube.com/@actxsocial" class="foo-youtube"><span class="fab fa-youtube"></span></a></h5>
-							<h5 class="h5-xs"><a href="https://www.linkedin.com/company/changegrouppl/" class="foo-linkedin"><span class="fab fa-linkedin-in"></span></a></h5>
-							</div>
+						<div class="kudos-footer-social" aria-label="Social links">
+							<a href="https://www.facebook.com/profile.php?id=61559539748734" aria-label="Facebook"><span class="fab fa-facebook-f"></span></a>
+							<a href="https://www.tiktok.com/@actx.social" aria-label="TikTok"><span class="fab fa-tiktok"></span></a>
+							<a href="https://www.instagram.com/actx.social/" aria-label="Instagram"><span class="fab fa-instagram"></span></a>
+							<a href="https://www.youtube.com/@actxsocial" aria-label="YouTube"><span class="fab fa-youtube"></span></a>
+							<a href="https://www.linkedin.com/company/changegrouppl/" aria-label="LinkedIn"><span class="fab fa-linkedin-in"></span></a>
 						</div>
-					
-						</div>
-					</div> <!-- END BOTTOM FOOTER -->
-
-
-				</div>	    <!-- End container -->
+					</div>
+				</div>
 			</footer>	<!-- END FOOTER-1 -->
 
 
