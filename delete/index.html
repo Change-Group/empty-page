@@ -101,6 +101,12 @@
 				text-decoration: none;
 			}
 
+			.kudos-logo-img {
+				display: block;
+				height: 46px;
+				width: auto;
+			}
+
 			.kudos-menu {
 				list-style: none;
 				display: flex;
@@ -214,6 +220,31 @@
 				transition: transform 0.2s ease, box-shadow 0.2s ease;
 			}
 
+			.kudos-footer-download .kudos-store.kudos-store-coming-soon {
+				position: relative;
+				overflow: hidden;
+			}
+
+			.kudos-footer-download .kudos-store.kudos-store-coming-soon::after {
+				content: "Coming Soon";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 150px;
+				text-align: center;
+				background: linear-gradient(135deg, #ffb14a 0%, #ff8e2b 100%);
+				color: #fff;
+				font-size: 10px;
+				font-weight: 700;
+				line-height: 1.8;
+				letter-spacing: 0.03em;
+				text-transform: uppercase;
+				transform: translate(-50%, -50%) rotate(-26deg);
+				z-index: 2;
+				pointer-events: none;
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+			}
+
 			.kudos-footer-download .kudos-store:hover {
 				transform: translateY(-2px);
 				box-shadow: 0 10px 24px rgba(15, 30, 32, 0.11);
@@ -305,6 +336,10 @@
 					font-size: 30px;
 				}
 
+				.kudos-logo-img {
+					height: 38px;
+				}
+
 				.kudos-nav {
 					flex-wrap: wrap;
 				}
@@ -383,7 +418,11 @@
 
 			<header class="kudos-header">
 				<div class="kudos-nav">
-					<h1 class="kudos-logo"><a href="/">Kuddos</a></h1>
+					<h1 class="kudos-logo">
+						<a href="/" aria-label="Kuddos home">
+							<img src="../images/splash_logo_n.png" alt="Kuddos logo" class="kudos-logo-img">
+						</a>
+					</h1>
 					<nav aria-label="Main navigation">
 						<ul class="kudos-menu">
 							<li><a href="../index.html#missions">Missions</a></li>
@@ -391,7 +430,7 @@
 							<li><a href="../index.html#community">Community</a></li>
 						</ul>
 					</nav>
-					<a href="#" class="kudos-download-btn">Download Free</a>
+					<a href="https://apps.apple.com/us/app/actx/id6503298379" class="kudos-download-btn" target="_blank" rel="noopener">Download Free</a>
 				</div>
 			</header>
 
@@ -455,7 +494,7 @@
 								<a href="https://apps.apple.com/us/app/actx/id6503298379" class="kudos-store" aria-label="Download on the App Store">
 									<img src="../images/appstore.png" alt="Download on the App Store">
 								</a>
-								<a href="#" class="kudos-store" aria-label="Get it on Google Play">
+								<a href="#" class="kudos-store kudos-store-coming-soon" aria-label="Get it on Google Play (Coming Soon)">
 									<img src="../images/googleplay.png" alt="Get it on Google Play">
 								</a>
 							</div>
