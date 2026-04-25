@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Set a new password for your Kuddos account">
-	<meta name="kuddos-reset-password-api" content="https://eggbox.kuddos.me/UpdatePassword">
-	<title>Reset password — Kuddos</title>
+	<meta name="kuddos-reset-password-api" content="https://eggbox.kuddos.me/User/UpdatePassword">
+	<title>Reset password - Kuddos</title>
 
 	<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
@@ -212,7 +212,7 @@
 			<div id="panel-no-token" hidden>
 				<h1>Link not valid</h1>
 				<p class="reset-lead">This page needs a password reset link from your email. If the link has expired, request a new reset from the Kuddos app.</p>
-				<a class="back-home" href="/">← Back to kuddos.me</a>
+				<a class="back-home" href="/">Back to kuddos.me</a>
 			</div>
 
 			<div id="panel-form" hidden>
@@ -230,7 +230,7 @@
 					<button type="submit" class="btn-submit" id="btn-submit">Update password</button>
 					<div id="form-msg" class="form-msg" hidden></div>
 				</form>
-				<a class="back-home" href="/">← Back to kuddos.me</a>
+				<a class="back-home" href="/">Back to kuddos.me</a>
 			</div>
 		</div>
 	</main>
@@ -246,18 +246,13 @@
 
 	<script>
 		(function () {
-			var CONFIG_URL = "https://eggbox.kuddos.me/UpdatePassword";
+			var CONFIG_URL = "https://eggbox.kuddos.me/User/UpdatePassword";
 			var meta = document.querySelector('meta[name="kuddos-reset-password-api"]');
 			var API_URL = (meta && meta.getAttribute("content") && meta.getAttribute("content").trim()) || CONFIG_URL;
-			if (!API_URL) {
-				API_URL = (typeof window.__KUDDOS_RESET_API__ === "string" && window.__KUDDOS_RESET_API__) || "";
-			}
 
 			var params = new URLSearchParams(window.location.search);
-			var forgetToken = params.get("forgetToken");
-			if (!forgetToken) {
-				forgetToken = params.get("forget_token");
-			}
+			var forgetToken = params.get("forgetToken") || params.get("forget_token") || "";
+			forgetToken = forgetToken.trim();
 
 			var panelNoToken = document.getElementById("panel-no-token");
 			var panelForm = document.getElementById("panel-form");
@@ -276,19 +271,12 @@
 				formMsg.textContent = "";
 			}
 
-			if (!forgetToken) {
+			if (!forgetToken || forgetToken === "${forgetToken}") {
 				panelNoToken.hidden = false;
 				return;
 			}
 
 			panelForm.hidden = false;
-
-			if (!API_URL) {
-				showMsg(
-					"Password reset is not fully configured. Set the API URL in the page meta tag kuddos-reset-password-api.",
-					"hint"
-				);
-			}
 
 			form.addEventListener("submit", function (e) {
 				e.preventDefault();
@@ -299,48 +287,65 @@
 
 				var count = p1.trim().length;
 				if (count < 6 || count > 16) {
-					showMsg("Password must be 6–16 characters.", "error");
+					showMsg("Password must be 6-16 characters.", "error");
 					return;
 				}
+
 				if (p1 !== p2) {
 					showMsg("Passwords do not match.", "error");
 					return;
 				}
 
-				if (!API_URL) {
-					showMsg("Backend URL is not set.", "error");
-					return;
-				}
-
 				btnSubmit.disabled = true;
+
 				fetch(API_URL, {
 					method: "POST",
-					headers: { "Content-Type": "application/json" },
+					mode: "cors",
+					headers: {
+						"Content-Type": "application/json",
+						"Accept": "application/json"
+					},
 					body: JSON.stringify({
 						forgetToken: forgetToken,
 						password: p1
 					})
 				})
 					.then(function (res) {
-						return res.json().then(function (data) {
-							return { ok: res.ok, status: res.status, data: data };
-						}).catch(function () {
-							return { ok: res.ok, status: res.status, data: null };
+						return res.text().then(function (text) {
+							var data = null;
+							try {
+								data = text ? JSON.parse(text) : null;
+							} catch (err) {
+								data = { message: text };
+							}
+
+							return {
+								ok: res.ok,
+								status: res.status,
+								data: data
+							};
 						});
 					})
 					.then(function (result) {
 						if (result.ok) {
 							showMsg("Your password has been updated. You can sign in to the app with your new password.", "success");
 							form.reset();
-						} else {
-							var errText = (result.data && (result.data.msg || result.data.message)) || "Could not update password. The link may have expired.";
-							showMsg(errText, "error");
+							btnSubmit.disabled = true;
+							return;
 						}
+
+						var data = result.data || {};
+						var errText =
+							data.msg ||
+							data.message ||
+							(data.error && (data.error.msg || data.error.message || data.error.data)) ||
+							"Could not update password. The link may have expired.";
+
+						showMsg(errText, "error");
+						btnSubmit.disabled = false;
 					})
 					.catch(function () {
 						showMsg("Network error. Check your connection and try again.", "error");
-					})
-					.finally(function () {
 						btnSubmit.disabled = false;
 					});
 			});
