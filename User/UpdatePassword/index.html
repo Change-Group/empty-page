@@ -4,16 +4,13 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Set a new password for your Kuddos account">
-	<!-- Optional: set content to your API URL so you do not have to edit the script (must allow CORS from https://kuddos.me) -->
-	<meta name="kuddos-reset-password-api" content="">
+	<meta name="description" content="Kuddos password reset — continue to the secure form">
 	<title>Reset password — Kuddos</title>
 
 	<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
 
 	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 	<style>
 		:root {
@@ -44,20 +41,11 @@
 			max-width: 1240px;
 			margin: 0 auto;
 			padding: 18px 24px;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: 18px;
 		}
 
-		.kudos-logo a {
-			display: block;
-		}
+		.kudos-logo a { display: block; }
 
-		.kudos-logo-img {
-			height: 46px;
-			width: auto;
-		}
+		.kudos-logo-img { height: 46px; width: auto; }
 
 		.kudos-main {
 			flex: 1;
@@ -78,110 +66,40 @@
 
 		.reset-card h1 {
 			font-family: "DM Serif Display", serif;
-			font-size: clamp(28px, 4vw, 36px);
+			font-size: clamp(26px, 4vw, 34px);
 			font-weight: 400;
 			color: var(--kudos-dark);
-			margin: 0 0 8px;
+			margin: 0 0 12px;
 			line-height: 1.15;
 		}
 
 		.reset-lead {
-			margin: 0 0 24px;
+			margin: 0 0 20px;
 			font-size: 15px;
 			line-height: 1.55;
 			color: #5a6a6c;
 		}
 
-		.form-group {
-			margin-bottom: 18px;
-		}
-
-		.form-group label {
-			display: block;
-			font-size: 13px;
-			font-weight: 600;
-			color: var(--kudos-dark);
-			margin-bottom: 6px;
-		}
-
-		.form-group input {
-			width: 100%;
-			padding: 12px 14px;
-			font-size: 16px;
-			font-family: inherit;
-			border: 1px solid #d5dedf;
-			border-radius: 8px;
-			transition: border-color 0.2s, box-shadow 0.2s;
-		}
-
-		.form-group input:focus {
-			outline: none;
-			border-color: var(--kudos-green);
-			box-shadow: 0 0 0 3px rgba(76, 136, 97, 0.15);
-		}
-
-		.btn-submit {
-			width: 100%;
-			margin-top: 8px;
-			padding: 14px 20px;
-			font-size: 16px;
-			font-weight: 600;
-			font-family: inherit;
-			color: #fff;
-			background: var(--kudos-dark);
-			border: none;
-			border-radius: 999px;
-			cursor: pointer;
-			transition: opacity 0.2s, transform 0.2s;
-		}
-
-		.btn-submit:hover:not(:disabled) {
-			opacity: 0.95;
-			transform: translateY(-1px);
-		}
-
-		.btn-submit:disabled {
-			opacity: 0.55;
-			cursor: not-allowed;
-		}
-
-		.form-msg {
-			margin-top: 16px;
-			padding: 12px 14px;
-			border-radius: 8px;
-			font-size: 14px;
-			line-height: 1.45;
-		}
-
-		.form-msg.error {
-			background: #fff0f0;
-			color: #8b2525;
-			border: 1px solid #f0c4c4;
-		}
-
-		.form-msg.success {
-			background: #e8fbea;
-			color: #1d5a2e;
-			border: 1px solid #b8e0c2;
-		}
-
-		.form-msg.hint {
-			background: #f0f4f2;
-			color: #3d4e50;
-			border: 1px solid #d5dedf;
-		}
-
 		.back-home {
 			display: inline-block;
-			margin-top: 20px;
+			margin-top: 8px;
 			font-size: 14px;
 			font-weight: 500;
 			color: var(--kudos-green);
 			text-decoration: none;
 		}
 
-		.back-home:hover {
-			text-decoration: underline;
+		.back-home:hover { text-decoration: underline; }
+
+		.fallback-link {
+			display: block;
+			margin-top: 20px;
+			font-size: 14px;
+			word-break: break-all;
+		}
+
+		.fallback-link a {
+			color: var(--kudos-green);
 		}
 
 		.kudos-footer {
@@ -192,9 +110,7 @@
 			text-align: center;
 		}
 
-		.kudos-footer a {
-			color: rgba(236, 242, 240, 0.9);
-		}
+		.kudos-footer a { color: rgba(236, 242, 240, 0.9); }
 	</style>
 </head>
 <body>
@@ -212,26 +128,16 @@
 		<div class="reset-card">
 			<div id="panel-no-token" hidden>
 				<h1>Link not valid</h1>
-				<p class="reset-lead">This page needs a password reset link from your email. If the link has expired, request a new reset from the Kuddos app.</p>
+				<p class="reset-lead">Open the password reset link from your email, or request a new reset from the Kuddos app.</p>
 				<a class="back-home" href="/">← Back to kuddos.me</a>
 			</div>
 
-			<div id="panel-form" hidden>
-				<h1>Set a new password</h1>
-				<p class="reset-lead">Choose a strong password for your Kuddos account.</p>
-				<form id="reset-form" novalidate>
-					<div class="form-group">
-						<label for="new-password">New password</label>
-						<input type="password" id="new-password" name="password" autocomplete="new-password" required minlength="8">
-					</div>
-					<div class="form-group">
-						<label for="confirm-password">Confirm password</label>
-						<input type="password" id="confirm-password" name="confirmPassword" autocomplete="new-password" required minlength="8">
-					</div>
-					<button type="submit" class="btn-submit" id="btn-submit">Update password</button>
-					<div id="form-msg" class="form-msg" hidden></div>
-				</form>
-				<a class="back-home" href="/">← Back to kuddos.me</a>
+			<div id="panel-redirect" hidden>
+				<h1>Continue to reset password</h1>
+				<p class="reset-lead" id="redirect-status">Opening the secure form…</p>
+				<p class="fallback-link" id="fallback-wrap" hidden>
+					If nothing happens, <a id="fallback-href" href="#">open this link</a>.
+				</p>
 			</div>
 		</div>
 	</main>
@@ -247,107 +153,32 @@
 
 	<script>
 		(function () {
-			// Point this to your Node API route that updates the user password (POST, JSON, CORS for https://kuddos.me).
-			// Overridden by <meta name="kuddos-reset-password-api" content="https://..."> when set.
-			var CONFIG_URL = "";
-
-			var meta = document.querySelector('meta[name="kuddos-reset-password-api"]');
-			var API_URL = (meta && meta.getAttribute("content") && meta.getAttribute("content").trim()) || CONFIG_URL;
-			if (!API_URL) {
-				API_URL = (typeof window.__KUDDOS_RESET_API__ === "string" && window.__KUDDOS_RESET_API__) || "";
-			}
+			// Backend serves HTML for GET /UpdatePassword?forgetToken=… (form + step-two flow).
+			var BACKEND_BASE = "https://eggbox.kuddos.me/UpdatePassword";
 
 			var params = new URLSearchParams(window.location.search);
 			var forgetToken = params.get("forgetToken");
-			// Some backends use forget_token; accept either
 			if (!forgetToken) {
 				forgetToken = params.get("forget_token");
 			}
 
-			var panelNoToken = document.getElementById("panel-no-token");
-			var panelForm = document.getElementById("panel-form");
-			var form = document.getElementById("reset-form");
-			var formMsg = document.getElementById("form-msg");
-			var btnSubmit = document.getElementById("btn-submit");
-
-			function showMsg(text, kind) {
-				formMsg.textContent = text;
-				formMsg.className = "form-msg " + (kind || "hint");
-				formMsg.hidden = false;
-			}
-
-			function hideMsg() {
-				formMsg.hidden = true;
-				formMsg.textContent = "";
-			}
+			var panelNo = document.getElementById("panel-no-token");
+			var panelGo = document.getElementById("panel-redirect");
+			var statusEl = document.getElementById("redirect-status");
+			var fallbackWrap = document.getElementById("fallback-wrap");
+			var fallbackHref = document.getElementById("fallback-href");
 
 			if (!forgetToken) {
-				panelNoToken.hidden = false;
+				panelNo.hidden = false;
 				return;
 			}
 
-			panelForm.hidden = false;
+			var dest = BACKEND_BASE + (window.location.search || ("?forgetToken=" + encodeURIComponent(forgetToken)));
+			panelGo.hidden = false;
+			fallbackHref.setAttribute("href", dest);
+			fallbackWrap.hidden = false;
 
-			if (!API_URL) {
-				showMsg(
-					"Password reset is not fully configured: set the meta tag kuddos-reset-password-api on this page (or the CONFIG_URL in the script) to your backend URL that accepts POST { forgetToken, password }.",
-					"hint"
-				);
-			}
-
-			form.addEventListener("submit", function (e) {
-				e.preventDefault();
-				hideMsg();
-
-				var p1 = document.getElementById("new-password").value;
-				var p2 = document.getElementById("confirm-password").value;
-
-				if (p1.length < 8) {
-					showMsg("Please use a password of at least 8 characters.", "error");
-					return;
-				}
-				if (p1 !== p2) {
-					showMsg("Passwords do not match.", "error");
-					return;
-				}
-
-				if (!API_URL) {
-					showMsg("Backend URL is not set. Add your API address to this page before users can complete reset.", "error");
-					return;
-				}
-
-				btnSubmit.disabled = true;
-				fetch(API_URL, {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({
-						forgetToken: forgetToken,
-						password: p1
-					})
-				})
-					.then(function (res) {
-						return res.json().then(function (data) {
-							return { ok: res.ok, status: res.status, data: data };
-						}).catch(function () {
-							return { ok: res.ok, status: res.status, data: null };
-						});
-					})
-					.then(function (result) {
-						if (result.ok) {
-							showMsg("Your password has been updated. You can sign in to the app with your new password.", "success");
-							form.reset();
-						} else {
-							var errText = (result.data && (result.data.msg || result.data.message)) || "Could not update password. The link may have expired.";
-							showMsg(errText, "error");
-						}
-					})
-					.catch(function () {
-						showMsg("Network error. Check your connection and try again.", "error");
-					})
-					.finally(function () {
-						btnSubmit.disabled = false;
-					});
-			});
+			window.location.replace(dest);
 		})();
 	</script>
 </body>
