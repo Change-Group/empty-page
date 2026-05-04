@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Contact Kuddos support — reach us by email at support@kuddos.me">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact &amp; support — Kuddos</title>
+
+  <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-touch-icon-76x76.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/flaticon.css" rel="stylesheet">
+  <link href="../css/menu.css" rel="stylesheet">
+  <link id="effect" href="../css/dropdown-effects/fade-down.css" media="all" rel="stylesheet">
+  <link href="../css/magnific-popup.css" rel="stylesheet">
+  <link href="../css/owl.carousel.min.css" rel="stylesheet">
+  <link href="../css/flexslider.css" rel="stylesheet">
+  <link href="../css/owl.theme.default.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/animate.css" rel="stylesheet">
+  <link href="../css/responsive.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --kudos-dark: #0f1e20;
+      --kudos-green: #4c8861;
+      --kudos-blue: #49acd9;
+      --kudos-text: #2e3b3d;
+      --kudos-mint: #e8fbea;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: var(--kudos-text);
+      background-color: #fff;
+    }
+
+    .kudos-header {
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #edf2f2;
+    }
+
+    .kudos-nav {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .kudos-logo {
+      margin: 0;
+      font-family: "DM Serif Display", serif;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--kudos-dark);
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+
+    .kudos-logo a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .kudos-logo-img {
+      display: block;
+      height: 46px;
+      width: auto;
+    }
+
+    .kudos-menu {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .kudos-menu a {
+      color: var(--kudos-dark);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .kudos-menu a:hover {
+      color: var(--kudos-green);
+    }
+
+    .kudos-download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background: var(--kudos-dark);
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 11px 24px;
+      border-radius: 999px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .kudos-download-btn:hover {
+      color: #fff;
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .kudos-contact-wrap {
+      position: relative;
+      overflow: hidden;
+      min-height: calc(100vh - 200px);
+      padding: 72px 24px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .kudos-contact-wrap::before {
+      content: "";
+      position: absolute;
+      left: -140px;
+      top: -80px;
+      width: 55%;
+      height: 70%;
+      border-radius: 40px;
+      background:
+        radial-gradient(circle at 70% 40%, rgba(73, 172, 217, 0.18), transparent 45%),
+        radial-gradient(circle at 30% 60%, rgba(150, 255, 205, 0.35), transparent 42%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .kudos-contact-wrap::after {
+      content: "";
+      position: absolute;
+      right: -100px;
+      bottom: -80px;
+      width: 52%;
+      height: 65%;
+      border-radius: 40px;
+      background:
+        radial-gradient(circle at 22% 30%, rgba(150, 255, 205, 0.45), transparent 42%),
+        linear-gradient(120deg, #f7fff7 0%, #dcffe2 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .kudos-contact-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .kudos-contact-eyebrow {
+      margin: 0 0 12px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--kudos-green);
+    }
+
+    .kudos-contact-title {
+      margin: 0 0 18px;
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(38px, 5vw, 52px);
+      font-weight: 400;
+      line-height: 1.08;
+      color: var(--kudos-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .kudos-contact-title em {
+      font-style: italic;
+      color: var(--kudos-blue);
+    }
+
+    .kudos-contact-lead {
+      margin: 0 0 36px;
+      font-size: 17px;
+      line-height: 1.65;
+      color: #44585b;
+    }
+
+    .kudos-contact-card {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 36px 40px;
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid rgba(15, 30, 32, 0.08);
+      box-shadow:
+        0 4px 24px rgba(15, 30, 32, 0.06),
+        0 1px 3px rgba(15, 30, 32, 0.04);
+    }
+
+    .kudos-contact-mail {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: var(--kudos-dark);
+      color: #fff !important;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .kudos-contact-mail:hover {
+      background: var(--kudos-green);
+      color: #fff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(76, 136, 97, 0.35);
+    }
+
+    .kudos-contact-mail .fa-envelope {
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .kudos-contact-hint {
+      margin: 24px 0 0;
+      font-size: 14px;
+      color: #6b7e81;
+      line-height: 1.5;
+    }
+
+    .kudos-footer {
+      padding: 56px 24px 26px;
+      background: #231f20;
+    }
+
+    .kudos-footer-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .kudos-footer-main {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 1fr;
+      gap: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .kudos-footer-logo {
+      width: 210px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .kudos-footer-sub {
+      margin: 14px 0 0;
+      max-width: 340px;
+      color: rgba(236, 242, 240, 0.72);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .kudos-footer-title {
+      margin: 0 0 8px;
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .kudos-footer-contact a {
+      color: rgba(236, 242, 240, 0.92);
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .kudos-footer-contact a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .kudos-footer-download .kudos-store-row {
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .kudos-footer-download .kudos-store {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid #000;
+      background: #000;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .kudos-footer-download .kudos-store.kudos-store-coming-soon {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kudos-footer-download .kudos-store.kudos-store-coming-soon::after {
+      content: "Coming Soon";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      text-align: center;
+      background: linear-gradient(135deg, #ffb14a 0%, #ff8e2b 100%);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.8;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      transform: translate(-50%, -50%) rotate(-26deg);
+      z-index: 2;
+      pointer-events: none;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .kudos-footer-download .kudos-store:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(15, 30, 32, 0.11);
+    }
+
+    .kudos-footer-download .kudos-store img {
+      height: 25px;
+      width: auto;
+      display: block;
+    }
+
+    .kudos-footer-bottom {
+      padding-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .kudos-footer-legal {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(236, 242, 240, 0.76);
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    .kudos-footer-legal a {
+      color: rgba(236, 242, 240, 0.88);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .kudos-footer-legal a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .kudos-footer-social {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .kudos-footer-social a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(236, 242, 240, 0.9);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .kudos-footer-social a:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.34);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 991px) {
+      .kudos-nav {
+        padding: 14px 18px;
+        gap: 12px;
+      }
+
+      .kudos-menu {
+        gap: 18px;
+      }
+
+      .kudos-download-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+      }
+
+      .kudos-footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .kudos-contact-wrap {
+        padding: 48px 20px 60px;
+        min-height: auto;
+      }
+
+      .kudos-contact-card {
+        padding: 28px 24px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .kudos-logo {
+        font-size: 30px;
+      }
+
+      .kudos-logo-img {
+        height: 38px;
+      }
+
+      .kudos-nav {
+        flex-wrap: wrap;
+      }
+
+      .kudos-menu {
+        width: 100%;
+        justify-content: flex-start;
+        order: 3;
+        margin-top: 4px;
+      }
+
+      .kudos-download-btn {
+        margin-left: auto;
+      }
+
+      .kudos-footer {
+        padding: 42px 16px 22px;
+      }
+
+      .kudos-footer-main {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding-bottom: 18px;
+      }
+
+      .kudos-footer-logo {
+        width: 170px;
+      }
+
+      .kudos-footer-contact a {
+        font-size: 15px;
+      }
+
+      .kudos-footer-bottom {
+        padding-top: 14px;
+      }
+
+      .kudos-footer-legal {
+        font-size: 12px;
+        gap: 10px;
+      }
+
+      .kudos-footer-legal a {
+        font-size: 12px;
+      }
+
+      .kudos-contact-mail {
+        font-size: 15px;
+        padding: 14px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loader-wrapper">
+    <div id="loading">
+      <span class="cssload-loader"><span class="cssload-loader-inner"></span></span>
+    </div>
+  </div>
+
+  <div id="page" class="page">
+    <header class="kudos-header">
+      <div class="kudos-nav">
+        <h1 class="kudos-logo">
+          <a href="/" aria-label="Kuddos home">
+            <img src="../images/splash_logo_n.png" alt="Kuddos logo" class="kudos-logo-img">
+          </a>
+        </h1>
+        <nav aria-label="Main navigation">
+          <ul class="kudos-menu">
+            <li><a href="/#missions">Missions</a></li>
+            <li><a href="/#toolkit">Toolkit</a></li>
+            <li><a href="/#community">Community</a></li>
+          </ul>
+        </nav>
+        <a href="https://apps.apple.com/us/app/actx/id6503298379" class="kudos-download-btn" target="_blank" rel="noopener">Download Free</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="kudos-contact-wrap" aria-labelledby="contact-heading">
+        <div class="kudos-contact-inner">
+          <p class="kudos-contact-eyebrow">Support</p>
+          <h2 id="contact-heading" class="kudos-contact-title">
+            We’re here to <em>help</em>
+          </h2>
+          <p class="kudos-contact-lead">
+            Questions, feedback, or account help? Send us an email — our team reads every message.
+          </p>
+          <div class="kudos-contact-card">
+            <a class="kudos-contact-mail" href="mailto:support@kuddos.me?subject=Kuddos%20support">
+              <i class="far fa-envelope" aria-hidden="true"></i>
+              support@kuddos.me
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer-1" class="footer division kudos-footer">
+      <div class="kudos-footer-wrap">
+        <div class="kudos-footer-main">
+          <div>
+            <img class="kudos-footer-logo" src="../images/splash_logo_n.png" alt="Kuddos logo">
+            <p class="kudos-footer-sub">
+              Build healthier habits with missions, quick tools, and a
+              supportive community.
+            </p>
+          </div>
+
+          <div class="kudos-footer-contact">
+            <p class="kudos-footer-title">Contact ✉️</p>
+            <a href="mailto:support@kuddos.me">support@kuddos.me</a>
+          </div>
+
+          <div class="kudos-footer-download">
+            <p class="kudos-footer-title">Download 📲</p>
+            <div class="kudos-store-row">
+              <a href="https://apps.apple.com/us/app/actx/id6503298379" class="kudos-store" aria-label="Download on the App Store">
+                <img src="../images/appstore.png" alt="Download on the App Store">
+              </a>
+              <a href="#" class="kudos-store kudos-store-coming-soon" aria-label="Get it on Google Play (Coming Soon)">
+                <img src="../images/googleplay.png" alt="Get it on Google Play">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="kudos-footer-bottom">
+          <div class="kudos-footer-legal">
+            <span>2026 @ Kuddos LLC</span>
+            <a href="/contact/">Contact</a>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Service</a>
+          </div>
+          <div class="kudos-footer-social" aria-label="Social links">
+            <a href="https://www.facebook.com/profile.php?id=61559539748734" aria-label="Facebook"><span class="fab fa-facebook-f"></span></a>
+            <a href="https://www.tiktok.com/@kuddos.me" aria-label="TikTok"><span class="fab fa-tiktok"></span></a>
+            <a href="https://www.instagram.com/kuddos.me/" aria-label="Instagram"><span class="fab fa-instagram"></span></a>
+            <a href="https://www.youtube.com/@actxsocial" aria-label="YouTube"><span class="fab fa-youtube"></span></a>
+            <a href="https://www.linkedin.com/company/changegrouppl/" aria-label="LinkedIn"><span class="fab fa-linkedin-in"></span></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/jquery-3.5.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/modernizr.custom.js"></script>
+  <script src="../js/jquery.easing.js"></script>
+  <script src="../js/jquery.appear.js"></script>
+  <script src="../js/jquery.scrollto.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/jquery.flexslider.js"></script>
+  <script src="../js/owl.carousel.min.js"></script>
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/jquery.validate.min.js"></script>
+  <script src="../js/jquery.ajaxchimp.min.js"></script>
+  <script src="../js/wow.js"></script>
+  <script src="../js/custom.js"></script>
+</body>
+</html>
